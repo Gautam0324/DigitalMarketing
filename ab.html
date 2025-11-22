@@ -1,0 +1,1051 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ADS CIRCLE - Transform Your Business</title>
+  <meta name="description"
+    content="Premium digital marketing agency specializing in SEO, social media, and growth strategies">
+  <!-- <meta property="og:image" content="https://bolt.new/static/og_default.png"> -->
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- <meta name="twitter:image" content="https://bolt.new/static/og_default.png"> -->
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+    * {
+      font-family: 'Inter', sans-serif;
+    }
+
+    .gradient-bg {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .soft-gradient {
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    }
+
+    .card-hover {
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .card-hover:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      transition: all 0.3s ease;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+    }
+
+    .nav-sticky {
+      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.95);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    }
+
+    .parallax {
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    .counter {
+      font-weight: 700;
+      font-size: 3rem;
+    }
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0px);
+      }
+
+      50% {
+        transform: translateY(-20px);
+      }
+    }
+
+    .float-animation {
+      animation: float 3s ease-in-out infinite;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 3px;
+      height: 100%;
+      background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
+    }
+
+    @media (max-width: 768px) {
+      .timeline-item::before {
+        left: 20px;
+      }
+    }
+
+    .tech-icon {
+      transition: all 0.3s ease;
+    }
+
+    .tech-icon:hover {
+      transform: scale(1.2) rotate(5deg);
+    }
+
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+
+    .accordion-content.active {
+      max-height: 500px;
+    }
+  </style>
+</head>
+
+<body class="overflow-x-hidden">
+
+  <!-- Sticky Navigation -->
+  <nav id="navbar" class="fixed w-full top-0 z-50 transition-all duration-300 py-4">
+    <div class="container mx-auto px-4 flex justify-between items-center">
+      <div class="flex items-center space-x-2">
+        <div class="w-10 h-10 gradient-bg rounded-lg flex items-center justify-center">
+          <span class="text-white font-bold text-xl">AC</span>
+        </div>
+        <div class="h-10 flex items-center">
+          <img src="../assets/logo.png" alt="ADS CIRCLE" class="h-20 sm:h-36 block mx-auto sm:mx-0">
+        </div>
+
+      </div>
+
+      <div class="hidden md:flex space-x-8">
+        <a href="#home" class="text-gray-700 hover:text-purple-600 transition font-medium">Home</a>
+        <a href="#services" class="text-gray-700 hover:text-purple-600 transition font-medium">Services</a>
+        <a href="#portfolio" class="text-gray-700 hover:text-purple-600 transition font-medium">Portfolio</a>
+        <a href="#about" class="text-gray-700 hover:text-purple-600 transition font-medium">About</a>
+        <a href="#contact" class="text-gray-700 hover:text-purple-600 transition font-medium">Contact</a>
+      </div>
+
+      <button class="btn-primary text-white px-6 py-2 rounded-full font-semibold">
+        Get Started
+      </button>
+
+      <button id="mobile-menu-btn" class="md:hidden text-gray-700">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+
+    <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
+      <div class="flex flex-col space-y-4 p-4">
+        <a href="#home" class="text-gray-700 hover:text-purple-600 transition">Home</a>
+        <a href="#services" class="text-gray-700 hover:text-purple-600 transition">Services</a>
+        <a href="#portfolio" class="text-gray-700 hover:text-purple-600 transition">Portfolio</a>
+        <a href="#about" class="text-gray-700 hover:text-purple-600 transition">About</a>
+        <a href="#contact" class="text-gray-700 hover:text-purple-600 transition">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="relative min-h-screen flex items-center gradient-bg overflow-hidden pt-20">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute top-20 left-10 w-72 h-72 bg-white rounded-full blur-3xl"></div>
+      <div class="absolute bottom-20 right-10 w-96 h-96 bg-white rounded-full blur-3xl"></div>
+    </div>
+
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div data-aos="fade-right">
+          <h1 class="text-5xl md:text-7xl font-black text-white mb-6 leading-tight">
+            Transform Your Digital Presence
+          </h1>
+          <p class="text-xl text-purple-100 mb-8 leading-relaxed">
+            We craft data-driven strategies that elevate your brand, engage your audience, and drive exponential growth
+            across all digital channels.
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <button
+              class="bg-white text-purple-600 px-8 py-4 rounded-full font-bold hover:shadow-2xl transition transform hover:scale-105">
+              Start Your Journey
+            </button>
+            <button
+              class="border-2 border-white text-white px-8 py-4 rounded-full font-bold hover:bg-white hover:text-purple-600 transition">
+              View Our Work
+            </button>
+          </div>
+
+          <div class="grid grid-cols-3 gap-8 mt-12">
+            <div data-aos="fade-up" data-aos-delay="100">
+              <div class="text-4xl font-bold text-white counter" data-target="500">0</div>
+              <div class="text-purple-200">Projects</div>
+            </div>
+            <div data-aos="fade-up" data-aos-delay="200">
+              <div class="text-4xl font-bold text-white counter" data-target="150">0</div>
+              <div class="text-purple-200">Clients</div>
+            </div>
+            <div data-aos="fade-up" data-aos-delay="300">
+              <div class="text-4xl font-bold text-white counter" data-target="95">0</div>
+              <div class="text-purple-200">Success Rate</div>
+            </div>
+          </div>
+        </div>
+
+        <div data-aos="fade-left" class="hidden md:block">
+          <div class="relative float-animation">
+            <img src="../assets/hero-image.jpeg" alt="Digital Marketing" class="rounded-3xl shadow-2xl">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Awards Section -->
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16" data-aos="fade-up">
+        <h2 class="text-4xl md:text-5xl font-bold mb-4 gradient-text">Award-Winning Excellence</h2>
+        <p class="text-xl text-gray-600">Recognized by industry leaders worldwide</p>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div class="text-center card-hover p-8 rounded-2xl bg-gray-50" data-aos="zoom-in" data-aos-delay="100">
+          <div class="text-5xl mb-4">🏆</div>
+          <h3 class="font-bold text-lg mb-2">Best Agency 2024</h3>
+          <p class="text-gray-600 text-sm">Marketing Excellence</p>
+        </div>
+        <div class="text-center card-hover p-8 rounded-2xl bg-gray-50" data-aos="zoom-in" data-aos-delay="200">
+          <div class="text-5xl mb-4">⭐</div>
+          <h3 class="font-bold text-lg mb-2">5-Star Rated</h3>
+          <p class="text-gray-600 text-sm">Client Reviews</p>
+        </div>
+        <div class="text-center card-hover p-8 rounded-2xl bg-gray-50" data-aos="zoom-in" data-aos-delay="300">
+          <div class="text-5xl mb-4">💎</div>
+          <h3 class="font-bold text-lg mb-2">Top Performer</h3>
+          <p class="text-gray-600 text-sm">Growth Awards</p>
+        </div>
+        <div class="text-center card-hover p-8 rounded-2xl bg-gray-50" data-aos="zoom-in" data-aos-delay="400">
+          <div class="text-5xl mb-4">🚀</div>
+          <h3 class="font-bold text-lg mb-2">Innovation Leader</h3>
+          <p class="text-gray-600 text-sm">Tech Summit</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Grid -->
+  <section id="services" class="py-20 soft-gradient">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16" data-aos="fade-up">
+        <h2 class="text-4xl md:text-5xl font-bold mb-4">Our Services</h2>
+        <p class="text-xl text-gray-600">Comprehensive digital solutions for modern businesses</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white rounded-2xl p-8 card-hover" data-aos="fade-up" data-aos-delay="100">
+          <div class="w-16 h-16 gradient-bg rounded-xl flex items-center justify-center mb-6">
+            <span class="text-3xl">🎯</span>
+          </div>
+          <h3 class="text-2xl font-bold mb-4">SEO Optimization</h3>
+          <p class="text-gray-600 mb-6">Dominate search rankings with data-driven SEO strategies that drive organic
+            traffic and conversions.</p>
+          <a href="#" class="text-purple-600 font-semibold hover:underline">Learn More →</a>
+        </div>
+
+        <div class="bg-white rounded-2xl p-8 card-hover" data-aos="fade-up" data-aos-delay="200">
+          <div class="w-16 h-16 gradient-bg rounded-xl flex items-center justify-center mb-6">
+            <span class="text-3xl">📱</span>
+          </div>
+          <h3 class="text-2xl font-bold mb-4">Social Media Marketing</h3>
+          <p class="text-gray-600 mb-6">Build engaged communities and amplify your brand across all major social
+            platforms.</p>
+          <a href="#" class="text-purple-600 font-semibold hover:underline">Learn More →</a>
+        </div>
+
+        <div class="bg-white rounded-2xl p-8 card-hover" data-aos="fade-up" data-aos-delay="300">
+          <div class="w-16 h-16 gradient-bg rounded-xl flex items-center justify-center mb-6">
+            <span class="text-3xl">💰</span>
+          </div>
+          <h3 class="text-2xl font-bold mb-4">PPC Advertising</h3>
+          <p class="text-gray-600 mb-6">Maximize ROI with precision-targeted ads that convert browsers into customers.
+          </p>
+          <a href="#" class="text-purple-600 font-semibold hover:underline">Learn More →</a>
+        </div>
+
+        <div class="bg-white rounded-2xl p-8 card-hover" data-aos="fade-up" data-aos-delay="100">
+          <div class="w-16 h-16 gradient-bg rounded-xl flex items-center justify-center mb-6">
+            <span class="text-3xl">✍️</span>
+          </div>
+          <h3 class="text-2xl font-bold mb-4">Content Marketing</h3>
+          <p class="text-gray-600 mb-6">Create compelling stories that resonate with your audience and build brand
+            authority.</p>
+          <a href="#" class="text-purple-600 font-semibold hover:underline">Learn More →</a>
+        </div>
+
+        <div class="bg-white rounded-2xl p-8 card-hover" data-aos="fade-up" data-aos-delay="200">
+          <div class="w-16 h-16 gradient-bg rounded-xl flex items-center justify-center mb-6">
+            <span class="text-3xl">📊</span>
+          </div>
+          <h3 class="text-2xl font-bold mb-4">Analytics & Insights</h3>
+          <p class="text-gray-600 mb-6">Make informed decisions with comprehensive analytics and actionable insights.
+          </p>
+          <a href="#" class="text-purple-600 font-semibold hover:underline">Learn More →</a>
+        </div>
+
+        <div class="bg-white rounded-2xl p-8 card-hover" data-aos="fade-up" data-aos-delay="300">
+          <div class="w-16 h-16 gradient-bg rounded-xl flex items-center justify-center mb-6">
+            <span class="text-3xl">🎨</span>
+          </div>
+          <h3 class="text-2xl font-bold mb-4">Brand Strategy</h3>
+          <p class="text-gray-600 mb-6">Develop a powerful brand identity that stands out in the crowded marketplace.
+          </p>
+          <a href="#" class="text-purple-600 font-semibold hover:underline">Learn More →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Specialties Section -->
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div data-aos="fade-right">
+          <img src="../assets/service-img-1.jpeg" alt="Team" class="rounded-3xl shadow-2xl">
+        </div>
+
+        <div data-aos="fade-left">
+          <h2 class="text-4xl md:text-5xl font-bold mb-6">What Makes Us Special</h2>
+          <p class="text-xl text-gray-600 mb-8">We combine creativity, technology, and strategic thinking to deliver
+            exceptional results.</p>
+
+          <div class="space-y-6">
+            <div class="flex items-start space-x-4">
+              <div class="w-12 h-12 gradient-bg rounded-lg flex items-center justify-center flex-shrink-0">
+                <span class="text-white text-xl">✓</span>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold mb-2">Data-Driven Approach</h3>
+                <p class="text-gray-600">Every decision backed by real-time analytics and market insights.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start space-x-4">
+              <div class="w-12 h-12 gradient-bg rounded-lg flex items-center justify-center flex-shrink-0">
+                <span class="text-white text-xl">✓</span>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold mb-2">Creative Excellence</h3>
+                <p class="text-gray-600">Award-winning campaigns that capture attention and drive engagement.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start space-x-4">
+              <div class="w-12 h-12 gradient-bg rounded-lg flex items-center justify-center flex-shrink-0">
+                <span class="text-white text-xl">✓</span>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold mb-2">Transparent Reporting</h3>
+                <p class="text-gray-600">Clear, detailed reports that show exactly how your investment is performing.
+                </p>
+              </div>
+            </div>
+
+            <div class="flex items-start space-x-4">
+              <div class="w-12 h-12 gradient-bg rounded-lg flex items-center justify-center flex-shrink-0">
+                <span class="text-white text-xl">✓</span>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold mb-2">Dedicated Support</h3>
+                <p class="text-gray-600">24/7 access to your dedicated account manager and support team.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured In / Brands -->
+  <section class="py-20 soft-gradient">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16" data-aos="fade-up">
+        <h2 class="text-4xl md:text-5xl font-bold mb-4">Trusted By Industry Leaders</h2>
+        <p class="text-xl text-gray-600">Powering growth for Fortune 500 companies and startups alike</p>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-5 gap-8 items-center opacity-60">
+        <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+          <div class="text-4xl font-bold">TECH Co</div>
+        </div>
+        <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+          <div class="text-4xl font-bold">INNOVATE</div>
+        </div>
+        <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+          <div class="text-4xl font-bold">BRANDS+</div>
+        </div>
+        <div class="text-center" data-aos="fade-up" data-aos-delay="400">
+          <div class="text-4xl font-bold">DIGITAL X</div>
+        </div>
+        <div class="text-center" data-aos="fade-up" data-aos-delay="500">
+          <div class="text-4xl font-bold">FUTURE</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Working Process Timeline -->
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16" data-aos="fade-up">
+        <h2 class="text-4xl md:text-5xl font-bold mb-4">Our Process</h2>
+        <p class="text-xl text-gray-600">A proven methodology that delivers consistent results</p>
+      </div>
+
+      <div class="relative timeline-item">
+        <div class="space-y-12">
+          <div class="grid md:grid-cols-2 gap-8 items-center" data-aos="fade-right">
+            <div class="bg-gradient-to-r from-purple-50 to-blue-50 rounded-2xl p-8">
+              <div
+                class="w-12 h-12 gradient-bg rounded-full flex items-center justify-center text-white font-bold text-xl mb-4">
+                1</div>
+              <h3 class="text-2xl font-bold mb-4">Discovery & Research</h3>
+              <p class="text-gray-600">We dive deep into your business, market, and competitors to understand your
+                unique challenges and opportunities.</p>
+            </div>
+            <div class="hidden md:block">
+              <img src="../assets/process-1.jpeg" alt="Research" class="rounded-2xl shadow-lg">
+            </div>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-8 items-center" data-aos="fade-left">
+            <div class="hidden md:block order-1">
+              <img src="../assets/process-2.jpeg" alt="Strategy" class="rounded-2xl shadow-lg">
+            </div>
+            <div class="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-8 order-2">
+              <div
+                class="w-12 h-12 gradient-bg rounded-full flex items-center justify-center text-white font-bold text-xl mb-4">
+                2</div>
+              <h3 class="text-2xl font-bold mb-4">Strategy Development</h3>
+              <p class="text-gray-600">We create a customized roadmap with clear goals, KPIs, and actionable tactics
+                designed for your success.</p>
+            </div>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-8 items-center" data-aos="fade-right">
+            <div class="bg-gradient-to-r from-purple-50 to-blue-50 rounded-2xl p-8">
+              <div
+                class="w-12 h-12 gradient-bg rounded-full flex items-center justify-center text-white font-bold text-xl mb-4">
+                3</div>
+              <h3 class="text-2xl font-bold mb-4">Implementation</h3>
+              <p class="text-gray-600">Our expert team executes the strategy with precision, launching campaigns across
+                all relevant channels.</p>
+            </div>
+            <div class="hidden md:block">
+              <img src="../assets/process-3.jpeg" alt="Implementation" class="rounded-2xl shadow-lg">
+            </div>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-8 items-center" data-aos="fade-left">
+            <div class="hidden md:block order-1">
+              <img src="../assets/process-4.jpeg" alt="Optimization" class="rounded-2xl shadow-lg">
+            </div>
+            <div class="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-8 order-2">
+              <div
+                class="w-12 h-12 gradient-bg rounded-full flex items-center justify-center text-white font-bold text-xl mb-4">
+                4</div>
+              <h3 class="text-2xl font-bold mb-4">Optimization & Growth</h3>
+              <p class="text-gray-600">We continuously analyze performance, test new approaches, and optimize for
+                maximum ROI and sustained growth.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEO Portfolio Section -->
+  <section id="portfolio" class="py-20 soft-gradient">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16" data-aos="fade-up">
+        <h2 class="text-4xl md:text-5xl font-bold mb-4">Success Stories</h2>
+        <p class="text-xl text-gray-600">Real results from real clients</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white rounded-2xl overflow-hidden card-hover" data-aos="zoom-in" data-aos-delay="100">
+          <img src="../assets/portfolio-img-1.jpeg" alt="Portfolio" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <div class="text-sm gradient-text font-semibold mb-2">E-COMMERCE</div>
+            <h3 class="text-xl font-bold mb-3">300% Revenue Growth</h3>
+            <p class="text-gray-600 mb-4">Transformed an online retailer's digital presence with comprehensive SEO and
+              PPC strategy.</p>
+            <div class="flex items-center justify-between">
+              <span class="text-purple-600 font-semibold">View Case Study →</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2xl overflow-hidden card-hover" data-aos="zoom-in" data-aos-delay="200">
+          <img src="../assets/portfolio-img-2.jpeg" alt="Portfolio" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <div class="text-sm gradient-text font-semibold mb-2">SAAS</div>
+            <h3 class="text-xl font-bold mb-3">500K+ New Users</h3>
+            <p class="text-gray-600 mb-4">Scaled a SaaS platform from startup to market leader through strategic content
+              marketing.</p>
+            <div class="flex items-center justify-between">
+              <span class="text-purple-600 font-semibold">View Case Study →</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2xl overflow-hidden card-hover" data-aos="zoom-in" data-aos-delay="300">
+          <img src="../assets/service-img-1.jpeg" alt="Portfolio" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <div class="text-sm gradient-text font-semibold mb-2">B2B SERVICES</div>
+            <h3 class="text-xl font-bold mb-3">250% Lead Generation</h3>
+            <p class="text-gray-600 mb-4">Boosted qualified leads for a B2B service provider through LinkedIn and email
+              campaigns.</p>
+            <div class="flex items-center justify-between">
+              <span class="text-purple-600 font-semibold">View Case Study →</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section id="about" class="py-20 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16" data-aos="fade-up">
+        <h2 class="text-4xl md:text-5xl font-bold mb-4">Why Choose Ads Circle</h2>
+        <p class="text-xl text-gray-600">We're not just another agency. We're your growth partner.</p>
+      </div>
+
+      <div class="grid md:grid-cols-4 gap-8">
+        <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+          <div class="w-20 h-20 gradient-bg rounded-full flex items-center justify-center mx-auto mb-6">
+            <span class="text-4xl">🎓</span>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Expert Team</h3>
+          <p class="text-gray-600">Industry veterans with 10+ years experience</p>
+        </div>
+
+        <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+          <div class="w-20 h-20 gradient-bg rounded-full flex items-center justify-center mx-auto mb-6">
+            <span class="text-4xl">⚡</span>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Fast Results</h3>
+          <p class="text-gray-600">See measurable improvements within 30 days</p>
+        </div>
+
+        <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+          <div class="w-20 h-20 gradient-bg rounded-full flex items-center justify-center mx-auto mb-6">
+            <span class="text-4xl">🔒</span>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Full Transparency</h3>
+          <p class="text-gray-600">Real-time dashboards and weekly reports</p>
+        </div>
+
+        <div class="text-center" data-aos="fade-up" data-aos-delay="400">
+          <div class="w-20 h-20 gradient-bg rounded-full flex items-center justify-center mx-auto mb-6">
+            <span class="text-4xl">💯</span>
+          </div>
+          <h3 class="text-xl font-bold mb-3">ROI Focused</h3>
+          <p class="text-gray-600">Average 3.5x return on marketing investment</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technologies -->
+  <section class="py-20 soft-gradient">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16" data-aos="fade-up">
+        <h2 class="text-4xl md:text-5xl font-bold mb-4">Technologies We Master</h2>
+        <p class="text-xl text-gray-600">Cutting-edge tools for maximum impact</p>
+      </div>
+
+      <div class="grid grid-cols-3 md:grid-cols-6 gap-8">
+        <div class="text-center tech-icon" data-aos="zoom-in">
+          <div class="w-20 h-20 bg-white rounded-2xl shadow-lg flex items-center justify-center mx-auto mb-3">
+            <span class="text-4xl">📊</span>
+          </div>
+          <p class="font-semibold">Analytics</p>
+        </div>
+        <div class="text-center tech-icon" data-aos="zoom-in" data-aos-delay="100">
+          <div class="w-20 h-20 bg-white rounded-2xl shadow-lg flex items-center justify-center mx-auto mb-3">
+            <span class="text-4xl">🔍</span>
+          </div>
+          <p class="font-semibold">SEO Tools</p>
+        </div>
+        <div class="text-center tech-icon" data-aos="zoom-in" data-aos-delay="200">
+          <div class="w-20 h-20 bg-white rounded-2xl shadow-lg flex items-center justify-center mx-auto mb-3">
+            <span class="text-4xl">📱</span>
+          </div>
+          <p class="font-semibold">Social</p>
+        </div>
+        <div class="text-center tech-icon" data-aos="zoom-in" data-aos-delay="300">
+          <div class="w-20 h-20 bg-white rounded-2xl shadow-lg flex items-center justify-center mx-auto mb-3">
+            <span class="text-4xl">📧</span>
+          </div>
+          <p class="font-semibold">Email</p>
+        </div>
+        <div class="text-center tech-icon" data-aos="zoom-in" data-aos-delay="400">
+          <div class="w-20 h-20 bg-white rounded-2xl shadow-lg flex items-center justify-center mx-auto mb-3">
+            <span class="text-4xl">🎨</span>
+          </div>
+          <p class="font-semibold">Design</p>
+        </div>
+        <div class="text-center tech-icon" data-aos="zoom-in" data-aos-delay="500">
+          <div class="w-20 h-20 bg-white rounded-2xl shadow-lg flex items-center justify-center mx-auto mb-3">
+            <span class="text-4xl">💻</span>
+          </div>
+          <p class="font-semibold">Dev</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog Section -->
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16" data-aos="fade-up">
+        <h2 class="text-4xl md:text-5xl font-bold mb-4">Latest Insights</h2>
+        <p class="text-xl text-gray-600">Expert tips and industry trends</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <article class="bg-gray-50 rounded-2xl overflow-hidden card-hover" data-aos="fade-up" data-aos-delay="100">
+          <img src="../assets/LatestInsights-img-1.png" alt="Blog" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <div class="text-sm text-purple-600 font-semibold mb-2">DIGITAL MARKETING</div>
+            <h3 class="text-xl font-bold mb-3">10 SEO Trends to Watch in 2024</h3>
+            <p class="text-gray-600 mb-4">Stay ahead of the curve with these emerging search optimization strategies...
+            </p>
+            <a href="#" class="text-purple-600 font-semibold hover:underline">Read More →</a>
+          </div>
+        </article>
+
+        <article class="bg-gray-50 rounded-2xl overflow-hidden card-hover" data-aos="fade-up" data-aos-delay="200">
+          <img src="../assets/LatestInsights-img-2.jpeg" alt="Blog" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <div class="text-sm text-purple-600 font-semibold mb-2">SOCIAL MEDIA</div>
+            <h3 class="text-xl font-bold mb-3">Mastering Instagram Reels for Business</h3>
+            <p class="text-gray-600 mb-4">Learn how to create viral content that drives real business results...</p>
+            <a href="#" class="text-purple-600 font-semibold hover:underline">Read More →</a>
+          </div>
+        </article>
+
+        <article class="bg-gray-50 rounded-2xl overflow-hidden card-hover" data-aos="fade-up" data-aos-delay="300">
+          <img src="../assets/LatestInsights-img-3.jpeg" alt="Blog" class="w-full h-48 object-cover">
+          <div class="p-6">
+            <div class="text-sm text-purple-600 font-semibold mb-2">STRATEGY</div>
+            <h3 class="text-xl font-bold mb-3">Building a High-Converting Sales Funnel</h3>
+            <p class="text-gray-600 mb-4">A step-by-step guide to creating funnels that turn visitors into customers...
+            </p>
+            <a href="#" class="text-purple-600 font-semibold hover:underline">Read More →</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Accordion -->
+  <section class="py-20 soft-gradient">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-16" data-aos="fade-up">
+          <h2 class="text-4xl md:text-5xl font-bold mb-4">Frequently Asked Questions</h2>
+          <p class="text-xl text-gray-600">Everything you need to know</p>
+        </div>
+
+        <div class="space-y-4">
+          <div class="bg-white rounded-2xl overflow-hidden" data-aos="fade-up">
+            <button
+              class="accordion-btn w-full text-left p-6 font-bold text-xl flex justify-between items-center hover:bg-gray-50 transition">
+              How long does it take to see results?
+              <span class="text-2xl accordion-icon">+</span>
+            </button>
+            <div class="accordion-content px-6 pb-6">
+              <p class="text-gray-600">Most clients see initial improvements within 30-60 days, with significant results
+                appearing after 3-6 months. SEO is a long-term investment, but our PPC and social campaigns can drive
+                immediate traffic and conversions.</p>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-2xl overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+            <button
+              class="accordion-btn w-full text-left p-6 font-bold text-xl flex justify-between items-center hover:bg-gray-50 transition">
+              What makes your agency different?
+              <span class="text-2xl accordion-icon">+</span>
+            </button>
+            <div class="accordion-content px-6 pb-6">
+              <p class="text-gray-600">We combine data-driven strategies with creative excellence. Our team has worked
+                with Fortune 500 companies and fast-growing startups, giving us unique insights into what works across
+                different industries and scales.</p>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-2xl overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+            <button
+              class="accordion-btn w-full text-left p-6 font-bold text-xl flex justify-between items-center hover:bg-gray-50 transition">
+              Do you work with small businesses?
+              <span class="text-2xl accordion-icon">+</span>
+            </button>
+            <div class="accordion-content px-6 pb-6">
+              <p class="text-gray-600">Absolutely! We offer scalable solutions for businesses of all sizes. Our packages
+                are designed to grow with you, starting from foundational strategies to comprehensive enterprise
+                solutions.</p>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-2xl overflow-hidden" data-aos="fade-up" data-aos-delay="300">
+            <button
+              class="accordion-btn w-full text-left p-6 font-bold text-xl flex justify-between items-center hover:bg-gray-50 transition">
+              What's included in your reporting?
+              <span class="text-2xl accordion-icon">+</span>
+            </button>
+            <div class="accordion-content px-6 pb-6">
+              <p class="text-gray-600">You'll receive weekly performance updates and comprehensive monthly reports
+                covering traffic, conversions, ROI, keyword rankings, and actionable recommendations. Plus, you'll have
+                24/7 access to your real-time analytics dashboard.</p>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-2xl overflow-hidden" data-aos="fade-up" data-aos-delay="400">
+            <button
+              class="accordion-btn w-full text-left p-6 font-bold text-xl flex justify-between items-center hover:bg-gray-50 transition">
+              Can I cancel at any time?
+              <span class="text-2xl accordion-icon">+</span>
+            </button>
+            <div class="accordion-content px-6 pb-6">
+              <p class="text-gray-600">Yes, we offer flexible contracts with no long-term lock-ins. While we recommend a
+                minimum 6-month commitment for best results, you can cancel with 30 days' notice at any time.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16" data-aos="fade-up">
+        <h2 class="text-4xl md:text-5xl font-bold mb-4">What Our Clients Say</h2>
+        <p class="text-xl text-gray-600">Don't just take our word for it</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-gradient-to-br from-purple-50 to-blue-50 rounded-2xl p-8" data-aos="fade-up"
+          data-aos-delay="100">
+          <div class="flex items-center mb-6">
+            <img src="../assets/client-img-1.jpeg" alt="Client" class="w-16 h-16 rounded-full mr-4">
+            <div>
+              <h4 class="font-bold text-lg">Sarah Johnson</h4>
+              <p class="text-gray-600">CEO, TechStart</p>
+            </div>
+          </div>
+          <div class="text-yellow-400 text-2xl mb-4">★★★★★</div>
+          <p class="text-gray-700 italic">"Ads Circle transformed our online presence completely. We've seen a 300%
+            increase in qualified leads and our revenue has doubled in just 6 months!"</p>
+        </div>
+
+        <div class="bg-gradient-to-br from-blue-50 to-purple-50 rounded-2xl p-8" data-aos="fade-up"
+          data-aos-delay="200">
+          <div class="flex items-center mb-6">
+            <img src="../assets/client-img-2.jpeg" alt="Client" class="w-16 h-16 rounded-full mr-4">
+            <div>
+              <h4 class="font-bold text-lg">Michael Chen</h4>
+              <p class="text-gray-600">Founder, EcoShop</p>
+            </div>
+          </div>
+          <div class="text-yellow-400 text-2xl mb-4">★★★★★</div>
+          <p class="text-gray-700 italic">"The team's expertise in SEO and content marketing is unmatched. They don't
+            just deliver results - they exceed expectations every single time."</p>
+        </div>
+
+        <div class="bg-gradient-to-br from-purple-50 to-blue-50 rounded-2xl p-8" data-aos="fade-up"
+          data-aos-delay="300">
+          <div class="flex items-center mb-6">
+            <img src="../assets/client-img-3.jpeg" alt="Client" class="w-16 h-16 rounded-full mr-4">
+            <div>
+              <h4 class="font-bold text-lg">Emily Rodriguez</h4>
+              <p class="text-gray-600">Marketing Director, FinanceHub</p>
+            </div>
+          </div>
+          <div class="text-yellow-400 text-2xl mb-4">★★★★★</div>
+          <p class="text-gray-700 italic">"Working with Ads Circle has been a game-changer. Their data-driven
+            approach and transparent reporting give us complete confidence in our marketing spend."</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Form -->
+  <section id="contact" class="py-20 gradient-bg relative overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute top-20 left-10 w-72 h-72 bg-white rounded-full blur-3xl"></div>
+      <div class="absolute bottom-20 right-10 w-96 h-96 bg-white rounded-full blur-3xl"></div>
+    </div>
+
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-12" data-aos="fade-up">
+          <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">Let's Grow Together</h2>
+          <p class="text-xl text-purple-100">Get a free consultation and discover how we can transform your business</p>
+        </div>
+
+        <div class="bg-white rounded-3xl p-8 md:p-12 shadow-2xl" data-aos="zoom-in">
+          <form class="space-y-6">
+            <div class="grid md:grid-cols-2 gap-6">
+              <div>
+                <label class="block text-gray-700 font-semibold mb-2">Full Name</label>
+                <input type="text"
+                  class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-purple-500 focus:outline-none transition"
+                  placeholder="John Doe">
+              </div>
+              <div>
+                <label class="block text-gray-700 font-semibold mb-2">Email Address</label>
+                <input type="email"
+                  class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-purple-500 focus:outline-none transition"
+                  placeholder="john@company.com">
+              </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+              <div>
+                <label class="block text-gray-700 font-semibold mb-2">Company Name</label>
+                <input type="text"
+                  class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-purple-500 focus:outline-none transition"
+                  placeholder="Your Company">
+              </div>
+              <div>
+                <label class="block text-gray-700 font-semibold mb-2">Phone Number</label>
+                <input type="tel"
+                  class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-purple-500 focus:outline-none transition"
+                  placeholder="+1 (555) 123-4567">
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-gray-700 font-semibold mb-2">Service Interest</label>
+              <select
+                class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-purple-500 focus:outline-none transition">
+                <option>SEO Optimization</option>
+                <option>Social Media Marketing</option>
+                <option>PPC Advertising</option>
+                <option>Content Marketing</option>
+                <option>Full Digital Strategy</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block text-gray-700 font-semibold mb-2">Tell Us About Your Project</label>
+              <textarea rows="5"
+                class="w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:border-purple-500 focus:outline-none transition"
+                placeholder="Share your goals and challenges..."></textarea>
+            </div>
+
+            <button type="submit" class="w-full btn-primary text-white px-8 py-4 rounded-full font-bold text-lg">
+              Get Your Free Consultation
+            </button>
+
+            <p class="text-center text-gray-600 text-sm">We'll respond within 24 hours</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white py-16">
+    <div class="container mx-auto px-4">
+      <div class="grid md:grid-cols-4 gap-12 mb-12">
+        <div>
+          <div class="flex items-center space-x-2 mb-6">
+            <div class="w-10 h-10 gradient-bg rounded-lg flex items-center justify-center">
+              <span class="text-white font-bold text-xl">AC</span>
+            </div>
+            <span class="text-2xl font-bold">Ads Circle</span>
+          </div>
+          <p class="text-gray-400 mb-6">Transforming businesses through innovative digital marketing strategies and
+            data-driven results.</p>
+          <div class="flex space-x-4">
+            <a href="#"
+              class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-purple-600 transition">f</a>
+            <a href="#"
+              class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-purple-600 transition">X</a>
+            <a href="#"
+              class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-purple-600 transition">in</a>
+            <a href="#"
+              class="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-purple-600 transition">ig</a>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-bold mb-6">Services</h3>
+          <ul class="space-y-3 text-gray-400">
+            <li><a href="#" class="hover:text-white transition">SEO Optimization</a></li>
+            <li><a href="#" class="hover:text-white transition">Social Media Marketing</a></li>
+            <li><a href="#" class="hover:text-white transition">PPC Advertising</a></li>
+            <li><a href="#" class="hover:text-white transition">Content Marketing</a></li>
+            <li><a href="#" class="hover:text-white transition">Brand Strategy</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-bold mb-6">Company</h3>
+          <ul class="space-y-3 text-gray-400">
+            <li><a href="#" class="hover:text-white transition">About Us</a></li>
+            <li><a href="#" class="hover:text-white transition">Our Team</a></li>
+            <li><a href="#" class="hover:text-white transition">Case Studies</a></li>
+            <li><a href="#" class="hover:text-white transition">Careers</a></li>
+            <li><a href="#" class="hover:text-white transition">Blog</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-bold mb-6">Contact</h3>
+          <ul class="space-y-3 text-gray-400">
+            <li>hello@adscircle.com</li>
+            <li>+1 (555) 123-4567</li>
+            <li>123 Marketing Street</li>
+            <li>San Francisco, CA 94102</li>
+            <li>United States</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="border-t border-gray-800 pt-8">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <p class="text-gray-400 text-sm mb-4 md:mb-0">© 2025 Ads Circle. All rights reserved.</p>
+          <div class="flex space-x-6 text-sm text-gray-400">
+            <a href="privacy.html" class="hover:text-white transition">Privacy Policy</a>
+            <a href="terms.html" class="hover:text-white transition">Terms of Service</a>
+            <a href="cookies.html" class="hover:text-white transition">Cookie Policy</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true,
+      offset: 100
+    });
+
+    window.addEventListener('scroll', function () {
+      const navbar = document.getElementById('navbar');
+      if (window.scrollY > 50) {
+        navbar.classList.add('nav-sticky');
+      } else {
+        navbar.classList.remove('nav-sticky');
+      }
+    });
+
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    const counters = document.querySelectorAll('.counter');
+    let animated = false;
+
+    function animateCounters() {
+      counters.forEach(counter => {
+        const target = parseInt(counter.getAttribute('data-target'));
+        const duration = 2000;
+        const step = target / (duration / 16);
+        let current = 0;
+
+        const updateCounter = () => {
+          current += step;
+          if (current < target) {
+            counter.textContent = Math.floor(current);
+            requestAnimationFrame(updateCounter);
+          } else {
+            counter.textContent = target + (counter.nextElementSibling.textContent === 'Success Rate' ? '%' : '+');
+          }
+        };
+        updateCounter();
+      });
+    }
+
+    window.addEventListener('scroll', () => {
+      const counterSection = document.querySelector('.counter').closest('section');
+      const counterPosition = counterSection.getBoundingClientRect().top;
+      const screenPosition = window.innerHeight / 1.3;
+
+      if (counterPosition < screenPosition && !animated) {
+        animateCounters();
+        animated = true;
+      }
+    });
+
+    const accordionBtns = document.querySelectorAll('.accordion-btn');
+
+    accordionBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const content = btn.nextElementSibling;
+        const icon = btn.querySelector('.accordion-icon');
+
+        document.querySelectorAll('.accordion-content').forEach(item => {
+          if (item !== content) {
+            item.classList.remove('active');
+            item.previousElementSibling.querySelector('.accordion-icon').textContent = '+';
+          }
+        });
+
+        content.classList.toggle('active');
+        icon.textContent = content.classList.contains('active') ? '−' : '+';
+      });
+    });
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+          mobileMenu.classList.add('hidden');
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>
